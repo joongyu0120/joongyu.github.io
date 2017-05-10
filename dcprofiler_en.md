@@ -8,7 +8,7 @@
 
 ## Background ##
 
-#### PMU (Performance Monitoring Unit) ###
+#### PMU (Performance Monitoring Unit) ####
 
 The CPU provides PMU (Performance Monitoring Unit) to measure various h/w related performance information. The number of PMUs is limited to four for each CPU core. The PMU provided by the CPU allows you to measure various performance indicators. Here are some of the PMU event lists supported by Linux Perf.
 
@@ -25,27 +25,27 @@ The CPU provides PMU (Performance Monitoring Unit) to measure various h/w relate
 - Stalled-cycles-frontend
 - ...
 
-#### Superscalar Architecture ###
+#### Superscalar Architecture ####
 
 The latest CPU is called the superscalar architecture, which can handle multiple CPU instructions in a single CPU cycle through relocation of the pipeline.
 
-#### Instructions per cycle (IPC) ###
+#### Instructions per cycle (IPC) ####
 
 IPC is the average number of instructions processed per CPU cycle. In terms of performance analysis, IPC is often talked about as opposed to CPI. The higher the IPC, the more efficiently the CPU uses system resources when processing instructions.
 
-#### Cycles Retired ###
+#### Cycles Retired ####
 
 Number of cycles that effectively processed the instructions
 
-#### Stalled cycles in front-end ###
+#### Stalled cycles in front-end ####
 
 The number of cycles that were waiting without pushing the command from the front-end to the back-end of the CPU. Generally, this occurs when a command cache miss occurs or when decoding is complicated.
 
-#### Stalled cycles in back-end ###
+#### Stalled cycles in back-end ####
 
 The number of cycles waiting to use resources such as memory at the CPU's back-end or to wait for long-running instructions (sqrt, log, etc.)
 
-#### Memory load / store issues ###
+#### Memory load / store issues ####
 
 Number of times memory load / store occurred
 
