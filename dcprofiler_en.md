@@ -65,11 +65,11 @@ The diagram below shows the overall architecture of the *DC Profiler*.
   
 - In-depth profiler
 
- The host performs sampling-based stack profiling on a per-container basis. It runs on-demand profiling and sends the results to Hadoop when profiling is finished
+ The host performs sampling-based stack profiling on a per-container basis. It runs on-demand profiling and sends the results to Hadoop when profiling is finished. It can be either of profilers, Perf or Oprofiler.
 
 - Ftrace controller
 
- Controls the ftrace and tracepoint of the Linux kernel to collect host system events.
+ Controls the ftrace and tracepoint of the Linux kernel to collect host system events such as signal delivery, process comm, process fork / exit and so on. 
 
 #### API server
 
