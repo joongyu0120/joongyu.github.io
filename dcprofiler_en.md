@@ -61,15 +61,15 @@ The diagram below shows the overall architecture of the *DC Profiler*.
 
 - PMU collector
 
-  It is installed on a host basis and collects necessary H / W related performance data using PMU. In the Linux kernel, tools are provided to allow profiling through PMU in a single process, process group, or cgroup basis through perf_event. In linux, a container is generally divided into cgroup units, Collect metrics. The PMU Collector performs profiling by alternating the time sharing method (about 10 seconds) for the containers running on the host and sends the result to Kafka.
+ It is installed on a host basis and collects necessary H / W related performance data using PMU. In the Linux kernel, tools are provided to allow profiling through PMU in a single process, process group, or cgroup basis through perf_event. In linux, a container is generally divided into cgroup units, Collect metrics. The PMU Collector performs profiling by alternating the time sharing method (about 10 seconds) for the containers running on the host and sends the result to Kafka.
   
 - In-depth profiler
 
-  The host performs sampling-based stack profiling on a per-container basis. It runs on-demand profiling and sends the results to Hadoop when profiling is finished
+ The host performs sampling-based stack profiling on a per-container basis. It runs on-demand profiling and sends the results to Hadoop when profiling is finished
 
 - Ftrace controller
 
-  Controls the ftrace and tracepoint of the Linux kernel to collect host system events.
+ Controls the ftrace and tracepoint of the Linux kernel to collect host system events.
 
 #### API server
 
@@ -85,12 +85,12 @@ Kafka is distributed streaming platform building real-time streaming data pipeli
 
 #### Spark / Spark streaming application
 - Continuous profile analyzer
-
-Based on the information collected from PMU Collector and system event collector, profile is processed and stored in HDFS database.
+ 
+ Based on the information collected from PMU Collector and system event collector, profile is processed and stored in HDFS database.
 
 - On-demand profile analyzer
-
-Analyze the results of Raw profiles obtained from the in-depth profiler and graph them in a form that can be analyzed by the human.
+ 
+ Analyze the results of Raw profiles obtained from the in-depth profiler and graph them in a form that can be analyzed by the human.
     
 
 #### Presto
@@ -133,7 +133,7 @@ The *continuous profiler* continuously uses the PMU to profile the state of all 
   
   *DC Profiler* eliminates these inconveniences and makes it easy for service providers to profile target containers. Because *DC Profiler* is installed on all hosts in DC and can find the placement related information of the containers constituting the service from the container management platform being used in DC, it is possible to judge which containers to profile when analyzing service unit performance. In addition, since system level profiling is performed, it is advantageous to perform the operation regardless of the OS of the container without installing a separate profiler in the container.
   
-  The information gathered from the on-demand profiling of *DC Profiler* is sent to Hadoop's storage and processed as offline batch processing. Currently, we are providing container-level analysis function through perf, and we are developing a function to provide Brendan Gregg's [Flame Graph] (http://www.brendangregg.com/flamegraphs.html) on the UI.
+  The information gathered from the on-demand profiling of *DC Profiler* is sent to Hadoop's storage and processed as offline batch processing. Currently, we are providing container-level analysis function through perf, and we are developing a function to provide Brendan Gregg's [Flame Graph](http://www.brendangregg.com/flamegraphs.html) on the UI.
   
 ## Interactive Query System
 
