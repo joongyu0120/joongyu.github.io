@@ -45,7 +45,7 @@ The number of cycles that were waiting without pushing the command from the fron
 
 The number of cycles waiting to use resources such as memory at the CPU's back-end or to wait for long-running instructions (sqrt, log, etc.)
 
-### Memory load / store issues ###
+#### Memory load / store issues ###
 
 Number of times memory load / store occurred
 
