@@ -125,15 +125,15 @@ The *continuous profiler* continuously uses the PMU to profile the state of all 
 
 ### System Event Analysis
 
- *DC Profiler*'s continuous profiling collects system events based on tracepoint and ftrace of Linux kernel in addition to PMU. However, since the load on the system may be increased depending on the events to be monitored, events that do not affect the system as much as possible are selected and collected. For example, signal generation information, the life cycle of a process, and cmdline information of a process are collected. This is also stored in the database on Hadoop HDFS and can be queried on demand.
+  *DC Profiler*'s continuous profiling collects system events based on tracepoint and ftrace of Linux kernel in addition to PMU. However, since the load on the system may be increased depending on the events to be monitored, events that do not affect the system as much as possible are selected and collected. For example, signal generation information, the life cycle of a process, and cmdline information of a process are collected. This is also stored in the database on Hadoop HDFS and can be queried on demand.
 
 ## On-demand Profiling
 
- Continuous profiling using the PMU provides a measure of the current status of the host and the container and the characteristics of the workload. Sometimes, however, you need to perform in-depth profiling with performance penalty(stack, system call, etc.) in development environment. Typically, in this case, the service provider must set up a solution for profiling in each container and set up the environment. This process can be very uncomfortable because the environment of the OS and the runtime of the application are different for each container.
-  
-  *DC Profiler* eliminates these inconveniences and makes it easy for service providers to profile target containers. Because *DC Profiler* is installed on all hosts in DC and can find the placement related information of the containers constituting the service from the container management platform being used in DC, it is possible to judge which containers to profile when analyzing service unit performance. In addition, since system level profiling is performed, it is advantageous to perform the operation regardless of the OS of the container without installing a separate profiler in the container.
-  
-  The information gathered from the on-demand profiling of *DC Profiler* is sent to Hadoop's storage and processed as offline batch processing. Currently, we are providing container-level analysis function through perf, and we are developing a function to provide Brendan Gregg's [Flame Graph](http://www.brendangregg.com/flamegraphs.html) on the UI.
+  Continuous profiling using the PMU provides a measure of the current status of the host and the container and the characteristics of the workload. Sometimes, however, you need to perform in-depth profiling with performance penalty(stack, system call, etc.) in development environment. Typically, in this case, the service provider must set up a solution for profiling in each container and set up the environment. This process can be very uncomfortable because the environment of the OS and the runtime of the application are different for each container.
+  
+  *DC Profiler* eliminates these inconveniences and makes it easy for service providers to profile target containers. Because *DC Profiler* is installed on all hosts in DC and can find the placement related information of the containers constituting the service from the container management platform being used in DC, it is possible to judge which containers to profile when analyzing service unit performance. In addition, since system level profiling is performed, it is advantageous to perform the operation regardless of the OS of the container without installing a separate profiler in the container.
+  
+  The information gathered from the on-demand profiling of *DC Profiler* is sent to Hadoop's storage and processed as offline batch processing. Currently, we are providing container-level analysis function through perf, and we are developing a function to provide Brendan Gregg's [Flame Graph](http://www.brendangregg.com/flamegraphs.html) on the UI.
   
 ## Interactive Query System
 
