@@ -1,3 +1,7 @@
+---
+title: Datacenter-wide Profiler
+layout: post
+---
 # Datacenter-wide Profiler
 
 ## Introduction
